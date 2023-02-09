@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".MainActivity">
+
+    <TextureView
+        android:id="@+id/texture_viewId"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <com.google.android.exoplayer2.ui.PlayerView
+        android:id="@+id/player"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/background_dark"
+        app:controller_layout_id="@layout/custom_controller"
+        app:player_layout_id="@layout/exo_player_view"
+        app:use_controller="true"
+        android:layout_above="@id/pickVideoButtonId"
+        app:surface_type="texture_view"/>
+
+    <com.google.android.material.button.MaterialButton
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+        android:id="@+id/pickVideoButtonId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pick Video "
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:strokeColor="@color/white"
+        android:textColor="@color/white"
+        app:icon="@drawable/ic_baseline_video_library"
+        app:iconTint="@color/white"
+        app:cornerRadius="10dp"
+        android:layout_above="@id/buttonIdFlip"/>
+
+    <com.google.android.material.button.MaterialButton
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+        android:id="@+id/buttonIdFlip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/buttonId"
+        android:layout_marginStart="10dp"
+        app:strokeColor="@color/white"
+        app:icon="@drawable/ic_baseline_flip"
+        app:iconTint="@color/white"
+        android:textColor="@color/white"
+        android:layout_marginEnd="10dp"
+        app:cornerRadius="10dp"
+        android:text="Flip Video "/>
+
+    <com.google.android.material.button.MaterialButton
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+        android:id="@+id/buttonId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="UnFlip Video "
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:textColor="@color/white"
+        app:strokeColor="@color/white"
+        app:cornerRadius="10dp"
+        app:icon="@drawable/ic_baseline_un_flip"
+        app:iconTint="@color/white"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>
