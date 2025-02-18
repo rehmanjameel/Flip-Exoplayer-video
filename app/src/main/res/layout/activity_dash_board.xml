@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DashBoardActivity"
+    android:background="@color/black">
+
+    <RelativeLayout
+        android:id="@+id/topLayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/grey">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@color/white"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+            android:id="@+id/pickVideoButtonId"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:text="Pick Video "
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            app:strokeColor="@color/white"
+            android:textColor="@color/white"
+            app:icon="@drawable/ic_baseline_video_library"
+            app:iconTint="@color/white"
+            android:backgroundTint="@color/grey"
+            app:cornerRadius="10dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+            android:id="@+id/seeGuideId"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:text="See Guide"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            app:strokeColor="@color/white"
+            android:textColor="@color/white"
+            app:icon="@drawable/baseline_info_24"
+            app:iconTint="@color/white"
+            android:backgroundTint="@color/grey"
+            app:cornerRadius="10dp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

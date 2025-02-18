@@ -36,6 +36,7 @@
         app:icon="@drawable/ic_baseline_video_library"
         app:iconTint="@color/white"
         app:cornerRadius="10dp"
+        android:visibility="gone"
         android:layout_above="@id/buttonIdFlip"/>
 
     <com.google.android.material.button.MaterialButton
@@ -51,16 +52,17 @@
         android:textColor="@color/white"
         android:layout_marginEnd="10dp"
         app:cornerRadius="10dp"
-        android:text="Flip Video "/>
+        android:text="Flip Video"/>
 
     <com.google.android.material.button.MaterialButton
         style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
         android:id="@+id/buttonId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="UnFlip Video "
+        android:text="UnFlip Video"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
+        android:layout_marginBottom="20dp"
         android:textColor="@color/white"
         app:strokeColor="@color/white"
         app:cornerRadius="10dp"
