@@ -13,12 +13,7 @@ public class App extends Application {
 
     public static Context context;
 
-    private static final String KEY_LOGGED_IN = "logged_in";
-    public static final String CHANNEL_ID = "ALARM_SERVICE_CHANNEL";
-    public static final String SERVER = "http://192.168.1.9:8000";
-    protected static final String API = String.format("%s/api/", SERVER);
-    public static final String GET_DATA_API = String.format("%sgetdata/", API);
-    public static final String GET_REGISTERED_USERS_API = String.format("%sregistergetdata/", API);
+//    private static final String KEY_LOGGED_IN = "logged_in";
 
     @Override
     public void onCreate() {
@@ -57,14 +52,14 @@ public class App extends Application {
         return sharedPreferences.getInt(key, Calendar.getInstance().get(Calendar.DAY_OF_MONTH));
     }
 
-    public static void saveLogin(boolean value) {
+    public static void saveLogin(String isLogin, boolean value) {
         SharedPreferences sharedPreferences = getPreferenceManager();
-        sharedPreferences.edit().putBoolean(KEY_LOGGED_IN, value).apply();
+        sharedPreferences.edit().putBoolean(isLogin, value).apply();
     }
 
-    public static boolean isLoggedIn() {
+    public static boolean isLoggedIn(String isLogin) {
         SharedPreferences sharedPreferences = getPreferenceManager();
-        return sharedPreferences.getBoolean(KEY_LOGGED_IN, false);
+        return sharedPreferences.getBoolean(isLogin, false);
     }
 
     public static void logout() {
@@ -75,7 +70,7 @@ public class App extends Application {
     private void createNotificationChannnel() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel serviceChannel = new NotificationChannel(
-                    CHANNEL_ID,
+                    "CHANNEL_ID",
                     "Alarm Service Channel",
                     NotificationManager.IMPORTANCE_DEFAULT
             );
